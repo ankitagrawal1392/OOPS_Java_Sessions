@@ -15,7 +15,22 @@ public class ClickUsingFindElements {
 		
         driver = new ChromeDriver();
 		
-		driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
+		driver.get("https://www.orangehrm.com/");
+		
+		
+		
+		List<WebElement> footerList = driver.findElements(By.xpath("//div[@class='footer-main-section']//li"));
+		
+		for(WebElement e : footerList) {
+			 String text = e.getText();
+			 if(text.equals("Help Portal")) {
+				 e.click();
+				 break;
+			 }
+			
+		}
+		
+		
 		
 //		List<WebElement> footerList = driver.findElements(By.xpath("//footer//a"));
 //		

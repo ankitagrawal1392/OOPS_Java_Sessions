@@ -32,6 +32,42 @@ public class StaticWebTable {
 		 * System.out.println(text); }
 		 */
 		
+
+		
+		String beforexpath = "//table[@id='customers']/tr[";
+		String afterxpath = "]/td[1]";
+		
+		
+		
+		int rowcount = driver.findElements(By.xpath("//table[@id='customers']//tr")).size();
+		
+		
+		for(int row = 2;row <= rowcount;row++) {
+			
+			String finalpath = beforexpath + row + afterxpath;
+			
+			driver.findElement(By.xpath(finalpath)).getText();
+			//System.out.println(text);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		getTableData(1);
 		getTableData(2);
 		getTableData(3);

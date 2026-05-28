@@ -39,7 +39,13 @@ public class SelectDropdownHandling {
 		//doSelectByIndex(country,6);
 		doSelectByValue(country,"Sri Lanka");
 		doSelectByVisibleText(employee,"51 - 200");
+		
+		
+		WebElement cout =driver.findElement(By.cssSelector("select[id='Form_getForm_Country']"));
 
+		Select selectCou = new Select(cout);
+		selectCou.selectByIndex(0);
+		
 	}
 	
 	
@@ -64,5 +70,8 @@ public class SelectDropdownHandling {
 	public static WebElement getElement(By locator) {
 		return driver.findElement(locator);
 	}
+	
+	
+	
 
 }

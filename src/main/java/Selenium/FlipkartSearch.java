@@ -17,17 +17,17 @@ public class FlipkartSearch {
 		driver = new ChromeDriver();
 		driver.get("https://www.flipkart.com");
 		
-		driver.findElement(By.xpath("//input[@class='Pke_EE' and contains(@name,'q') ]")).sendKeys("fossil");
+		driver.findElement(By.xpath("//input[@class='Pke_EE' and contains(@name,'q') ]")).sendKeys("milton");
 		
 		Thread.sleep(4000);
-		List<WebElement> suggList = driver.findElements(By.xpath("//ul[@class='_1sFryS _2x2Mmc _3ofZy1']//div[@class='YGcVZO _2VHNef']"));
+		List<WebElement> suggList = driver.findElements(By.xpath("//ul[@class='col-12-12 bbjHWC QDWHTu']//span"));
 		
 		System.out.println(suggList.size());
 		
 		for(WebElement e : suggList ) {
 			String text = e.getText();
 			System.out.println(text);
-			if(text.contains("digital")) {
+			if(text.contains("lunch box")) {
 				e.click();
 				break;
 			}
@@ -37,4 +37,6 @@ public class FlipkartSearch {
 	}
 
 }
+
+
 

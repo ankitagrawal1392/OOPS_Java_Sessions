@@ -38,8 +38,34 @@ public class WebTableConcept {
 		  
 		  //selectUser("Joe.Root"); selectUser("Jasmine.Morgan");
 		 
+	
+		
+	
+		selectUserData();
+	
+	
+	
 
+	}	
+	
+	
+	public static List<String> selectUserData() {
+		List<WebElement> userinfo = driver.findElements(By.xpath("//a[text()='Joe.Root']/parent::td/following-sibling::td"));
+		List<String> userData = new ArrayList<String>();
+		
+		for(WebElement e : userinfo) {
+			String text =  e.getText();
+			
+			
+			 userData.add(text);
+		}
+         return userData;
 	}
+	
+	
+     	
+	
+	
 
 	public static void selectUser(String username) {
 		driver.findElement(
